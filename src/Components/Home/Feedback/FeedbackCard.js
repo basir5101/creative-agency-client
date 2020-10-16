@@ -1,5 +1,4 @@
 import React from 'react';
-import picture from '../../../images/icons/service4.png'
 
 const FeedbackCard = ({feedback}) => {
     return (

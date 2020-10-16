@@ -66,7 +66,7 @@ const UserReview = () => {
                             <input onBlur = {handleBlur} type="text" className="form-control" name = 'Designation' placeholder="Company's Name Designation" required/>
                         </div>
                         <div className="form-group">
-                            <textarea onBlur = {handleBlur}type="text" name = 'description' placeholder = 'Description' class="form-control"  rows="3"></textarea>
+                            <textarea onBlur = {handleBlur}type="text" name = 'description' placeholder = 'Description' className="form-control"  rows="3"></textarea>
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1">Upload a image</label>

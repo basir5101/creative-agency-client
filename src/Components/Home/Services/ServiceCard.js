@@ -18,7 +18,7 @@ const ServiceCard = ({service}) => {
             <div className = 'col-md-4 service-card'>
                 <Link onClick = {() => handleClick(service.title, service.picture)} className = 'nav-link text-dark' to = '/dashboard'>
                 <div className="p-3 text-center">
-                    <img className = 'w-25' src= {service.picture} alt=""/>
+                    <img className = 'w-25' src= {`data:image/png;base64, ${service.photo.img}`} alt=""/>
                     <h4>{service.title}</h4>
                     <p> {service.description} </p>
                 </div>  

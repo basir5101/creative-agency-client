@@ -35,9 +35,9 @@ const Login = () => {
     return (
         <section>
             <Navbar/>
-            <div className="container p-5 m-5">
+            <div className="container p-5 m-5 text-center border">
                 <h4>Login With</h4>
-                <button onClick = {handleGoogleSignIn}>Continue With Google</button>
+                <button className = 'btn btn-success m-5' onClick = {handleGoogleSignIn}> <i className = 'pl-4 fa fa-google'></i> Continue With Google</button>
             </div>
         </section>
     );

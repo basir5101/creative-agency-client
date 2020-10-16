@@ -11,7 +11,6 @@ import AddAdmin from "./Components/DashBoard/AdminPanel/AddAdmin/AddAdmin";
 import AddService from "./Components/DashBoard/AdminPanel/AddService/AddService";
 import OrderList from "./Components/DashBoard/AdminPanel/OrderList/OrderList";
 import Order from "./Components/DashBoard/UserPanel/Order/Order";
-import UserPanel from "./Components/DashBoard/UserPanel/UserPanel";
 import UserReview from "./Components/DashBoard/UserPanel/UserReview/UserReview";
 import UserStatus from "./Components/DashBoard/UserPanel/UserStatus/UserStatus";
 import Home from "./Components/Home/Home/Home";
@@ -36,21 +35,21 @@ function App() {
           <PrivateRoute path = '/dashboard'>
             <Order/>
           </PrivateRoute>
-          <Route path = '/review'>
+          <PrivateRoute path = '/review'>
             <UserReview/>
-          </Route>
-          <Route path = '/status'>
+          </PrivateRoute>
+          <PrivateRoute path = '/order-list'>
             <UserStatus/>
-          </Route>
-          <Route path = '/order-list'>
+          </PrivateRoute>
+          <PrivateRoute path = '/service-list'>
             <OrderList/>
-          </Route>
-          <Route path = '/addService'>
+          </PrivateRoute>
+          <PrivateRoute path = '/addService'>
             <AddService/>
-          </Route>
-          <Route path = '/addAdmin'>
+          </PrivateRoute>
+          <PrivateRoute path = '/addAdmin'>
             <AddAdmin/>
-          </Route>
+          </PrivateRoute>
           <Route path = '*'>
             <NotFound></NotFound>
           </Route>
