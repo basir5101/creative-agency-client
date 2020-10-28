@@ -1,4 +1,4 @@
-This website front end created with react and backend node js with firebase authentication.
+This website's front end created with react and backend node js with firebase authentication.
 This is created for selling some creative service like web design, graphics design, web development.
 when a customer chose a product he will redirect to login/signup page. after choose any service he can give review on that service.
 after login a user he/she can see his/her all ordered project.
