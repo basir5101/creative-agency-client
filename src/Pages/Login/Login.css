@@ -1,0 +1,16 @@
+.login{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login img{
+    height: 70px;
+    margin: 50px 0px;
+}
+.login .login-form{
+    height: 40vh;
+    width: 50vw;
+    border: 1px solid green;
+}

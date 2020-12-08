@@ -4,54 +4,48 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import './App.css';
-import AddAdmin from "./Components/DashBoard/AdminPanel/AddAdmin/AddAdmin";
-import AddService from "./Components/DashBoard/AdminPanel/AddService/AddService";
-import OrderList from "./Components/DashBoard/AdminPanel/OrderList/OrderList";
-import Order from "./Components/DashBoard/UserPanel/Order/Order";
-import UserReview from "./Components/DashBoard/UserPanel/UserReview/UserReview";
-import UserStatus from "./Components/DashBoard/UserPanel/UserStatus/UserStatus";
-import Home from "./Components/Home/Home/Home";
-import Login from "./Components/Login/Login";
-import NotFound from "./Components/NotFound/NotFound";
+import Login from "./Pages/Login/Login";
+import Home from "./Pages/Home/Home";
+import Order from "./Pages/Order/Order";
+import ServiceList from "./Pages/ServiceList/ServiceList";
+import AddService from "./Pages/AddService/AddService";
+import MakeAdmin from "./Pages/MakeAdmin/MakeAdmin";
+import Review from "./Pages/Review/Review";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 
 function App() {
-  const [loggedInUser, SetLoggedInUser] = useState({})
+  const [userInfo, setUserInfo] = useState({})
   return (
-    <UserContext.Provider value = {[loggedInUser, SetLoggedInUser]}>
+    <UserContext.Provider value = {[userInfo, setUserInfo]}>
       <Router>
         <Switch>
           <Route exact path = '/'>
-            <Home/>
+            <Home />
           </Route>
           <Route path = '/login'>
-            <Login/>
+            <Login />
           </Route>
-          <PrivateRoute path = '/dashboard'>
-            <Order/>
-          </PrivateRoute>
-          <PrivateRoute path = '/review'>
-            <UserReview/>
-          </PrivateRoute>
-          <PrivateRoute path = '/order-list'>
-            <UserStatus/>
+          <PrivateRoute path = '/order/:serviceId'>
+            <Order />
           </PrivateRoute>
           <PrivateRoute path = '/service-list'>
-            <OrderList/>
+            <ServiceList />
           </PrivateRoute>
-          <PrivateRoute path = '/addService'>
-            <AddService/>
+          <PrivateRoute path = '/review'>
+            <Review />
           </PrivateRoute>
-          <PrivateRoute path = '/addAdmin'>
-            <AddAdmin/>
+          <PrivateRoute path = '/add-service'>
+            <AddService />
+          </PrivateRoute>
+          <PrivateRoute path = '/add-admin'>
+            <MakeAdmin />
           </PrivateRoute>
           <Route path = '*'>
-            <NotFound></NotFound>
+            
           </Route>
         </Switch>
       </Router>

@@ -1,0 +1,9 @@
+.navbar li a{
+    color: black;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+li a .active{
+    color: green;
+}

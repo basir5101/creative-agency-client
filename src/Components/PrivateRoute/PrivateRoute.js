@@ -1,15 +1,14 @@
-import React from "react";
-import { useContext } from "react";
-import { Redirect, Route } from "react-router-dom";
-import { UserContext } from "../../App";
+import React, { useContext } from 'react';
+import { Redirect, Route } from 'react-router-dom';
+import { UserContext } from '../../App';
 
-function PrivateRoute({ children, ...rest }) {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+const PrivateRoute = ({ children, ...rest }) => {
+    const [userInfo, setUserInfo] = useContext(UserContext)
     return (
-      <Route
+        <Route
         {...rest}
         render={({ location }) =>
-        loggedInUser.email ? (
+          userInfo.email ? (
             children
           ) : (
             <Redirect
@@ -22,6 +21,6 @@ function PrivateRoute({ children, ...rest }) {
         }
       />
     );
-}
+};
 
 export default PrivateRoute;
